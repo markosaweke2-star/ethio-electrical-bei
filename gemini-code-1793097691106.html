@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="am" class="h-full bg-slate-900 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHIO ELECTRICAL INSTALLATION (BEI)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans Ethiopic & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Supabase JS Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0b1329',
+                            dark: '#060a17',
+                            card: '#111936',
+                            border: '#1e294b',
+                            amber: '#f59e0b',
+                            amberHover: '#d97706',
+                            gold: '#fbbf24',
+                            electric: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Ethiopic', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+            background-color: #060a17;
+            color: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b1329;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e294b;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        .glass-panel {
+            background: rgba(17, 25, 54, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(30, 41, 75, 0.8);
+        }
+        /* Floating Call Button Pulse Effect */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .call-btn-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col min-h-screen relative">
+
+    <!-- FLOATING CELLPHONE CALL BUTTON (ለደንበኞች ፈጣን መደወያ) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+        <!-- WhatsApp Direct Chat -->
+        <a href="https://wa.me/251913853888?text=ሰላም%20ETHIO%20ELECTRICAL%20ዕቃ%20መግዛት%20እፈልግ%20ነበር" target="_blank" class="bg-green-600 hover:bg-green-500 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-110" title="በWhatsApp ይፃፉ">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+        <!-- Direct Phone Call Button -->
+        <a href="tel:+251913853888" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-slate-950 font-extrabold px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-3 transition transform hover:scale-105 call-btn-pulse border-2 border-white/20">
+            <i class="fa-solid fa-phone-volume text-xl animate-bounce"></i>
+            <span class="text-xs md:text-sm tracking-wide">አሁኑኑ ይደውሉ (0913853888)</span>
+        </a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-brand-navy border-b border-brand-border sticky top-0 z-40 shadow-2xl">
+        <!-- Top Bar Notification Notice -->
+        <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 text-xs py-1.5 px-4 font-bold flex justify-between items-center shadow-inner">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-bolt animate-pulse"></i>
+                ኢትዮ ኤሌክትሪካል ኢንስታሌሽን (BEI) - የኤሌክትሪክ ዕቃዎች ገበያና ማስታወቂያ
+            </span>
+            <div class="hidden md:flex items-center space-x-4 text-slate-900 font-semibold">
+                <a href="tel:+251913853888" class="hover:underline flex items-center gap-1"><i class="fa-solid fa-phone"></i> +251 09 13 85 38 88</a>
+                <a href="https://t.me/EthioElectricalBEI" target="_blank" class="hover:underline flex items-center gap-1 text-slate-950"><i class="fa-brands fa-telegram"></i> ቴሌግራም</a>
+                <a href="https://tiktok.com/@EthioElectricalBEI" target="_blank" class="hover:underline flex items-center gap-1 text-slate-950"><i class="fa-brands fa-tiktok"></i> ቲክቶክ</a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                    <div class="bg-gradient-to-br from-amber-400 to-amber-600 text-slate-950 p-3 rounded-2xl shadow-lg shadow-amber-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-plug-circle-bolt text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg md:text-xl font-extrabold tracking-wide text-white font-sans">
+                            ETHIO ELECTRICAL <span class="text-amber-400">BEI</span>
+                        </h1>
+                        <p class="text-[11px] text-slate-400 font-medium tracking-wider">የኤሌክትሪክ ዕቃዎች ገበያና ማስታወቂያ</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden xl:flex space-x-1 font-medium text-xs md:text-sm">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-3.5 py-2 rounded-xl transition flex items-center gap-2 text-amber-400 bg-white/5 border border-amber-500/20">
+                        <i class="fa-solid fa-house text-amber-400"></i> መነሻ
+                    </button>
+                    <button onclick="switchTab('products')" id="nav-products" class="nav-btn px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-store text-amber-400"></i> የዕቃዎች ሱቅ
+                    </button>
+                    <button onclick="switchTab('post')" id="nav-post" class="nav-btn px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-plus-circle text-amber-400"></i> ዕቃ መለጠፊያ
+                    </button>
+                    <button onclick="switchTab('subscriptions')" id="nav-subscriptions" class="nav-btn px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-building text-amber-400"></i> የድርጅቶች አባልነት
+                    </button>
+                    <button onclick="switchTab('reminders')" id="nav-reminders" class="nav-btn px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-bell text-amber-400"></i> ማስታወሻና ክፍያ
+                    </button>
+                    <button onclick="switchTab('admin')" id="nav-admin" class="nav-btn px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-amber-400"></i> አስተዳዳሪ
+                    </button>
+                </nav>
+
+                <!-- Header Quick Actions -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="tel:+251913853888" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/10 text-xs md:text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> ደውለው ይዘዙ
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="xl:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white p-2 rounded-lg bg-brand-card border border-brand-border">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-brand-dark border-b border-brand-border px-4 pt-3 pb-6 space-y-2">
+            <button onclick="switchTab('home')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-amber-400 flex items-center gap-3">
+                <i class="fa-solid fa-house w-5"></i> መነሻ
+            </button>
+            <button onclick="switchTab('products')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-white flex items-center gap-3">
+                <i class="fa-solid fa-store w-5 text-amber-400"></i> የዕቃዎች ሱቅ (Marketplace)
+            </button>
+            <button onclick="switchTab('post')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-white flex items-center gap-3">
+                <i class="fa-solid fa-plus-circle w-5 text-amber-400"></i> ዕቃ መለጠፊያ (ቦታ ማከራየት)
+            </button>
+            <button onclick="switchTab('subscriptions')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-white flex items-center gap-3">
+                <i class="fa-solid fa-building w-5 text-amber-400"></i> የድርጅቶች አባልነት
+            </button>
+            <button onclick="switchTab('reminders')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-white flex items-center gap-3">
+                <i class="fa-solid fa-bell w-5 text-amber-400"></i> ማስታወሻና ክፍያ
+            </button>
+            <button onclick="switchTab('admin')" class="w-full text-left px-4 py-3 rounded-xl font-medium hover:bg-brand-card text-white flex items-center gap-3">
+                <i class="fa-solid fa-sliders w-5 text-amber-400"></i> አስተዳዳሪ
+            </button>
+            <div class="pt-4 border-t border-brand-border flex justify-around">
+                <a href="tel:+251913853888" class="text-green-400 flex items-center gap-2 text-xs font-bold"><i class="fa-solid fa-phone text-lg"></i> 0913853888</a>
+                <a href="https://t.me/EthioElectricalBEI" target="_blank" class="text-amber-400 flex items-center gap-2 text-xs"><i class="fa-brands fa-telegram text-lg"></i> ቴሌግራም</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Toast Container -->
+    <div id="toast-container" class="fixed bottom-24 right-5 z-50 flex flex-col space-y-3 max-w-md w-full pointer-events-none"></div>
+
+    <!-- MAIN Dynamic Views Container -->
+    <main class="flex-grow">
+
+        <!-- ================= SECTION 1: HOME PAGE ================= -->
+        <section id="tab-home" class="tab-content">
+            <div class="relative bg-gradient-to-b from-brand-navy via-brand-dark to-brand-dark py-16 md:py-24 border-b border-brand-border overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <span class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-full px-4 py-1.5 text-xs font-semibold">
+                                <i class="fa-solid fa-shield-halved"></i> በኢትዮጵያ ቀዳሚው የኤሌክትሪክ ዕቃዎች ገበያ
+                            </span>
+                            <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                                ጥራት ያላቸው የኤሌክትሪክ ዕቃዎችን <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">ይግዙ፣ ይሸጡ፤</span> ድርጅትዎን ያስተዋውቁ!
+                            </h2>
+                            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                                ETHIO ELECTRICAL INSTALLATION (BEI) - ለግለሰቦችና ለድርጅቶች የተዘጋጀ አስተማማኝ የኤሌክትሪክ ዕቃዎች ማስታወቂያና ማሻሻጫ መድረክ።
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <button onclick="switchTab('products')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-7 py-3.5 rounded-2xl shadow-xl transition flex items-center gap-2 text-sm">
+                                    <i class="fa-solid fa-magnifying-glass"></i> ዕቃዎችን ይመልከቱ
+                                </button>
+                                <a href="tel:+251913853888" class="bg-green-600 hover:bg-green-500 text-white font-bold px-7 py-3.5 rounded-2xl transition flex items-center gap-2 text-sm shadow-xl">
+                                    <i class="fa-solid fa-phone"></i> በስልክ ይደውሉ (0913853888)
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Live Metrics Card -->
+                        <div class="lg:col-span-5">
+                            <div class="glass-panel p-6 rounded-3xl shadow-2xl border border-brand-border space-y-6">
+                                <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 border-b border-brand-border pb-4">
+                                    <i class="fa-solid fa-chart-line text-amber-400"></i> የ BEI ገበያ የቀጥታ መረጃ
+                                </h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-brand-dark/80 p-4 rounded-2xl border border-brand-border">
+                                        <p class="text-xs text-slate-400">የተለቀቁ ዕቃዎች</p>
+                                        <p class="text-2xl font-extrabold text-amber-400 mt-1" id="home-stat-products">0</p>
+                                    </div>
+                                    <div class="bg-brand-dark/80 p-4 rounded-2xl border border-brand-border">
+                                        <p class="text-xs text-slate-400">የተመዘገቡ ድርጅቶች</p>
+                                        <p class="text-2xl font-extrabold text-brand-electric mt-1" id="home-stat-companies">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: MARKETPLACE PAGE ================= -->
+        <section id="tab-products" class="tab-content hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="bg-brand-card p-6 rounded-3xl border border-brand-border shadow-2xl mb-8 space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-store text-amber-400"></i> የኤሌክትሪክ ዕቃዎች ሱቅ
+                        </h2>
+                        <span id="market-results-count" class="bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold px-3 py-1 rounded-full">0</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-4">
+                        <div class="md:col-span-6 relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-sm"></i>
+                            <input type="text" id="market-search" oninput="applyMarketFilters()" placeholder="ዕቃ፣ አድራሻ ወይም ሻጭ ፈልግ..." class="w-full pl-10 pr-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs md:text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div class="md:col-span-6">
+                            <select id="market-category" onchange="applyMarketFilters()" class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs md:text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                                <option value="all">ሁሉም ምድቦች</option>
+                                <option value="ኬብል">ኬብልና ሽቦዎች</option>
+                                <option value="መብራቶች">መብራቶች & LED</option>
+                                <option value="ስዊች">ስዊች & ብሬከሮች</option>
+                                <option value="መሣሪያዎች">መሣሪያዎች (Tools)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="marketplace-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic Items with Cellphone Direct Call Button -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: VENDOR ITEM POSTING ================= -->
+        <section id="tab-post" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="bg-brand-card rounded-3xl border border-brand-border shadow-2xl p-8 space-y-6">
+                    <h2 class="text-2xl font-extrabold text-white">ዕቃ መለጠፊያ (ቦታ ማከራየት)</h2>
+                    <form id="post-item-form" onsubmit="handleNewItemSubmit(event)" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">የዕቃው ስም <span class="text-red-400">*</span></label>
+                                <input type="text" id="input-title" required placeholder="ምሳሌ: Chint 3-Phase Circuit Breaker" class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">ምድብ <span class="text-red-400">*</span></label>
+                                <select id="input-category" required class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none focus:ring-2 focus:ring-amber-500">
+                                    <option value="">ምድብ ይምረጡ...</option>
+                                    <option value="ኬብል">ኬብልና ሽቦዎች</option>
+                                    <option value="መብራቶች">መብራቶች & LED</option>
+                                    <option value="ስዊች">ስዊች & ብሬከሮች</option>
+                                    <option value="መሣሪያዎች">መሣሪያዎች (Tools)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">ዋጋ (በብር ETB) <span class="text-red-400">*</span></label>
+                                <input type="number" id="input-price" required min="1" placeholder="ምሳሌ: 6500" class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">የለጣፊው ስልክ ቁጥር <span class="text-red-400">*</span></label>
+                                <input type="tel" id="input-phone" required placeholder="0911XXXXXX" class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">አድራሻ / ቦታ <span class="text-red-400">*</span></label>
+                                <input type="text" id="input-location" required placeholder="አዲስ አበባ፣ መርካቶ" class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2">ስለ ዕቃው አጭር መግለጫ <span class="text-red-400">*</span></label>
+                            <textarea id="input-desc" required rows="4" placeholder="የዕቃውን ጥራት ይግለጹ..." class="w-full px-4 py-3 bg-brand-dark border border-brand-border rounded-xl text-white text-xs outline-none resize-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 rounded-xl text-xs transition">
+                            ዕቃውን ለጥፍ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other sections remain active -->
+        <section id="tab-subscriptions" class="tab-content hidden"></section>
+        <section id="tab-reminders" class="tab-content hidden"></section>
+        <section id="tab-admin" class="tab-content hidden"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy border-t border-brand-border py-8 text-center text-xs text-slate-400">
+        © 2026 ETHIO ELECTRICAL INSTALLATION (BEI).
+    </footer>
+
+    <!-- App Logic -->
+    <script>
+        const DEFAULT_PRODUCTS = [
+            { id: 1, title: "Chint 3-Phase Circuit Breaker 100A", category: "ስዊች", price: 6500, phone: "0913853888", location: "መርካቶ ታላቁ ህንፃ", desc: "ከፍተኛ ጥራት ያለው የቻይና ከርክት ብሬከር ለፋብሪካና ለንግድ ቤት።" },
+            { id: 2, title: "Copper Flexible Cable 16mm²", category: "ኬብል", price: 320, phone: "0913853888", location: "ፒያሳ ኤሌክትሪክ መደብር", desc: "ለቤት ውስጥ ዋና ዋና መስመሮች የሚሆን ንጹህ መዳብ ከለር ኬብል በሜትር።" }
+        ];
+
+        let products = JSON.parse(localStorage.getItem('BEI_PRODUCTS')) || DEFAULT_PRODUCTS;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if(tabId === 'products') renderMarketplace();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function renderMarketplace() {
+            const grid = document.getElementById('marketplace-grid');
+            if(!grid) return;
+
+            grid.innerHTML = products.map(p => `
+                <div class="bg-brand-card p-6 rounded-3xl border border-brand-border hover:border-amber-500/50 transition flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-amber-500/20 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/30">${p.category}</span>
+                            <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i>${p.location}</span>
+                        </div>
+                        <h4 class="font-extrabold text-sm text-white mb-2">${p.title}</h4>
+                        <p class="text-xs text-slate-400 line-clamp-3 mb-4">${p.desc}</p>
+                    </div>
+                    <div>
+                        <div class="mb-4 pt-4 border-t border-brand-border flex justify-between items-center">
+                            <span class="text-xl font-black text-amber-400">${p.price.toLocaleString()} <span class="text-xs font-normal text-slate-400">ETB</span></span>
+                        </div>
+                        <!-- Cellphone Direct Call Button -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="tel:${p.phone}" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-phone"></i> ደውል (${p.phone})
+                            </a>
+                            <a href="https://wa.me/251${p.phone.substring(1)}?text=ስለ%20${encodeURIComponent(p.title)}%20መጠየቅ%20እፈልግ%20ነበር" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-green-400 font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 border border-brand-border transition">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('market-results-count').innerText = products.length;
+            document.getElementById('home-stat-products').innerText = products.length;
+        }
+
+        function handleNewItemSubmit(e) {
+            e.preventDefault();
+            const newItem = {
+                id: Date.now(),
+                title: document.getElementById('input-title').value,
+                category: document.getElementById('input-category').value,
+                price: parseFloat(document.getElementById('input-price').value),
+                phone: document.getElementById('input-phone').value,
+                location: document.getElementById('input-location').value,
+                desc: document.getElementById('input-desc').value
+            };
+            products.push(newItem);
+            localStorage.setItem('BEI_PRODUCTS', JSON.stringify(products));
+            alert("ዕቃው በስኬት ተለጥፏል!");
+            switchTab('products');
+        }
+
+        window.onload = function() {
+            renderMarketplace();
+        };
+    </script>
+</body>
+</html>
